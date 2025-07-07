@@ -1,1 +1,48 @@
-<html><body><h1>App de Cuentas Corrientes</h1></body></html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App de Cuentas Corrientes</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f2f5; }
+    h1 { color: #333; }
+    nav { margin-bottom: 20px; }
+    nav a { margin-right: 10px; text-decoration: none; color: #007bff; }
+    .panel { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    button { padding: 10px 15px; border: none; border-radius: 5px; background-color: #007bff; color: white; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>App de Cuentas Corrientes</h1>
+  <nav>
+    <a href="#" onclick="showPanel('inicio')">Inicio</a>
+    <a href="#" onclick="showPanel('sectores')">Sectores</a>
+    <a href="#" onclick="showPanel('resumen')">Resumen General</a>
+  </nav>
+
+  <div id="inicio" class="panel">
+    <h2>Bienvenido</h2>
+    <p>Utilizá el menú para gestionar sectores, cargar datos y ver el estado general de las cuentas corrientes.</p>
+  </div>
+
+  <div id="sectores" class="panel" style="display:none">
+    <h2>Gestión por Sector</h2>
+    <p>Aquí irán los formularios y controles por sector.</p>
+    <button onclick="alert('Funcionalidad en desarrollo')">+ Agregar nuevo sector</button>
+  </div>
+
+  <div id="resumen" class="panel" style="display:none">
+    <h2>Resumen General</h2>
+    <p>Panel con estado de crédito, facturación, pagos y deudas.</p>
+  </div>
+
+  <script>
+    function showPanel(id) {
+      document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
